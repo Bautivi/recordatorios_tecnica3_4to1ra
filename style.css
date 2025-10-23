@@ -1,139 +1,155 @@
-/* Reset básico */
-* {
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    font-family: 'Fredoka One', sans-serif;
+.body {
     background: linear-gradient(to bottom, #1a2932, #170c22);
-    color: #fff;
-    min-height: 100vh;
+    font-family: 'Fredoka One', sans-serif;
 }
 
-/* Contenedor central */
-.container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-/* Línea decorativa */
 #line {
-    width: 90%;
+    position: relative;
+    width: 100%; /* que sea responsive */
+    max-width: 1400px;
     height: 3px;
     background-color: rgb(0, 255, 110);
-    margin: 20px 0;
+    top: 50%; /* lo centré verticalmente */
+    transform: translateY(-50%);
 }
 
-/* Resultados */
-#resultados {
-    margin: 20px 0;
-    text-align: center;
-}
-
-/* Botón flotante */
-.boton_fijo {
+/* Botón fijo */
+.botónes_fijos {
     position: fixed;
+    width: 40px;
+    height: 28px;
     bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    font-size: 2rem;
+    right: 5%; /* antes estaba 630px, ahora relativo */
+    font-size: 24px;
     font-weight: bold;
     background-color: rgb(0, 255, 110);
     color: #1a0236;
+    transition: 0.2s;
     border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
+    border-radius: 6px;
+    transform-origin: center;
 }
 
-.boton_fijo:hover {
+.botónes_fijos:hover {
     background-color: rgb(145, 18, 249);
-    color: #fff;
+    color: #ffffff;
 }
 
-.boton_fijo.expandido {
+#botón_fijo_1.expandido {
     transform: scale(1.5);
 }
 
 /* Submenú */
-.submenu {
+#submenu_1 {
     position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(to bottom, #1a2932, #170c22);
-    border: 2px solid #fff;
-    border-radius: 10px;
-    padding: 20px;
     display: none;
-    flex-direction: column;
-    gap: 15px;
+    top: 10%;
+    right: 5%;
+    background: linear-gradient(to bottom, #1a2932, #170c22);
+    border: 2px solid #ffffff;
+    border-radius: 8px;
     width: 90%;
-    max-width: 400px;
-    z-index: 100;
+    max-width: 600px;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-/* Inputs y dropdown */
-.input_submenu, .dropdown, input[type="date"] {
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #fff;
+/* Inputs y botones dentro del submenú */
+.input_submenu {
+    width: 80%;
+    max-width: 320px;
+    height: 28px;
+    border-radius: 2px;
+    border: 2px solid #ffffff;
     outline: none;
-    width: 100%;
-    font-size: 1rem;
+    margin-top: 10px;
+    display: block;
 }
 
-.input_submenu:focus, .dropdown:focus, input[type="date"]:focus {
-    border-color: rgb(0, 255, 110);
+.input_submenu:focus {
+    border: 3px solid rgb(0, 255, 110);
 }
 
-/* Botones */
-.boton_listo, .btn_salir {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.boton_listo {
+#botón_submenu_listo {
+    position: relative;
+    margin-top: 20px;
+    font-family: 'Fredoka One';
     background-color: rgb(0, 255, 110);
+    width: 96px;
+    height: 40px;
     color: #1a0236;
-    align-self: flex-end;
+    border: 3px solid #ffffff;
+    border-radius: 4px;
 }
 
-.btn_salir {
-    background-color: rgb(255, 0, 144);
+/* Títulos del submenú */
+#submenu_titulo_1,
+#submenu_titulo_2,
+#submenu_titulo_3 {
+    font-family: 'Fredoka One', sans-serif;
+    color: #ffffff;
+    margin: 10px 0 5px 0;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    width: 90%;
+    max-width: 136px;
+    background-color: #ffffff;
     color: #1a0236;
-    align-self: flex-end;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-/* Etiquetas */
-label {
-    font-size: 1rem;
-    margin-bottom: 5px;
+/* Lista oculta */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 140px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    z-index: 1;
 }
 
-/* Responsivo */
-@media (max-width: 480px) {
-    .boton_fijo {
-        width: 14vw;
-        height: 14vw;
-        font-size: 7vw;
+.dropdown-content a {
+    color: #1a0236;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(0, 255, 110);
+}
+
+/* Media query para pantallas chicas */
+@media (max-width: 600px) {
+    #submenu_1 {
+        top: 5%;
+        right: 2.5%;
+        width: 95%;
+        height: auto;
     }
 
-    .submenu {
-        width: 95%;
-        top: 5%;
-        padding: 15px;
+    .botónes_fijos {
+        right: 2%;
+        bottom: 10px;
     }
 }
