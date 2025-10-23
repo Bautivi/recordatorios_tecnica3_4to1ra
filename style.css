@@ -1,155 +1,153 @@
 html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
-}
-
-.body {
-    background: linear-gradient(to bottom, #1a2932, #170c22);
+    height: 100%;
     font-family: 'Fredoka One', sans-serif;
+    background: linear-gradient(to bottom, #1a2932, #170c22);
 }
 
 #line {
-    position: relative;
-    width: 100%; /* que sea responsive */
+    width: 90%;
     max-width: 1400px;
     height: 3px;
     background-color: rgb(0, 255, 110);
-    top: 50%; /* lo centré verticalmente */
-    transform: translateY(-50%);
+    margin: 50px auto;
 }
 
-/* Botón fijo */
-.botónes_fijos {
+/* Botón flotante */
+.boton_fijo {
     position: fixed;
-    width: 40px;
-    height: 28px;
-    bottom: 20px;
-    right: 5%; /* antes estaba 630px, ahora relativo */
-    font-size: 24px;
+    bottom: 5%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
     font-weight: bold;
+    border: none;
+    border-radius: 8px;
     background-color: rgb(0, 255, 110);
     color: #1a0236;
     transition: 0.2s;
-    border: none;
-    border-radius: 6px;
-    transform-origin: center;
 }
 
-.botónes_fijos:hover {
+.boton_fijo:hover {
     background-color: rgb(145, 18, 249);
-    color: #ffffff;
-}
-
-#botón_fijo_1.expandido {
-    transform: scale(1.5);
+    color: #fff;
 }
 
 /* Submenú */
-#submenu_1 {
+.submenu {
     position: fixed;
-    display: none;
-    top: 10%;
-    right: 5%;
-    background: linear-gradient(to bottom, #1a2932, #170c22);
-    border: 2px solid #ffffff;
-    border-radius: 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 90%;
-    max-width: 600px;
-    height: auto;
+    max-width: 400px;
+    background: linear-gradient(to bottom, #1a2932, #170c22);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    display: none;
     padding: 20px;
     box-sizing: border-box;
+    color: #fff;
 }
 
-/* Inputs y botones dentro del submenú */
+/* Cerrar submenú */
+.cerrar {
+    float: right;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255,0,144);
+    border: none;
+    border-radius: 5px;
+    color: #1a0236;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Titulos y textos */
+.submenu h1, .submenu h2 {
+    margin: 10px 0 5px 0;
+}
+
+/* Inputs */
 .input_submenu {
-    width: 80%;
-    max-width: 320px;
-    height: 28px;
-    border-radius: 2px;
-    border: 2px solid #ffffff;
-    outline: none;
-    margin-top: 10px;
-    display: block;
+    width: 100%;
+    height: 35px;
+    margin-bottom: 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #1a0236;
 }
 
 .input_submenu:focus {
-    border: 3px solid rgb(0, 255, 110);
+    border: 2px solid rgb(0, 255, 110);
+    outline: none;
 }
 
-#botón_submenu_listo {
-    position: relative;
-    margin-top: 20px;
-    font-family: 'Fredoka One';
-    background-color: rgb(0, 255, 110);
-    width: 96px;
-    height: 40px;
+/* Botón listo */
+#boton_submenu_listo {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(0,255,110);
     color: #1a0236;
-    border: 3px solid #ffffff;
-    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* Títulos del submenú */
-#submenu_titulo_1,
-#submenu_titulo_2,
-#submenu_titulo_3 {
-    font-family: 'Fredoka One', sans-serif;
-    color: #ffffff;
-    margin: 10px 0 5px 0;
+#boton_submenu_listo:hover {
+    background-color: rgb(145, 18, 249);
+    color: #fff;
 }
 
 /* Dropdown */
 .dropdown {
     position: relative;
-    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .dropbtn {
-    width: 90%;
-    max-width: 136px;
-    background-color: #ffffff;
-    color: #1a0236;
+    width: 100%;
     padding: 10px;
-    font-size: 12px;
+    font-size: 16px;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #1a0236;
     cursor: pointer;
-    margin-top: 10px;
 }
 
-/* Lista oculta */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #ffffff;
-    min-width: 140px;
-    border: 2px solid #ffffff;
+    background-color: #fff;
+    width: 100%;
     border-radius: 5px;
-    z-index: 1;
+    z-index: 10;
 }
 
 .dropdown-content a {
-    color: #1a0236;
+    display: block;
     padding: 10px;
     text-decoration: none;
-    display: block;
+    color: #1a0236;
 }
 
 .dropdown-content a:hover {
-    background-color: rgb(0, 255, 110);
+    background-color: rgb(0,255,110);
 }
 
-/* Media query para pantallas chicas */
-@media (max-width: 600px) {
-    #submenu_1 {
-        top: 5%;
-        right: 2.5%;
-        width: 95%;
-        height: auto;
-    }
-
-    .botónes_fijos {
-        right: 2%;
-        bottom: 10px;
-    }
+/* Canvas partículas */
+#particlesCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
