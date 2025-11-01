@@ -1,153 +1,202 @@
+/* --- REGLA BASE: evita que los tamaños se rompan --- */
+* {
+    box-sizing: border-box;
+}
+
+/* --- CONFIGURACIÓN GENERAL --- */
 html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: 'Fredoka One', sans-serif;
-    background: linear-gradient(to bottom, #1a2932, #170c22);
 }
 
+.body {
+    background: #1d1327;
+    font-family: 'Fredoka One', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- LÍNEA DECORATIVA --- */
 #line {
-    width: 90%;
-    max-width: 1400px;
+    position: absolute;
+    width: 100%;
     height: 3px;
     background-color: rgb(0, 255, 110);
-    margin: 50px auto;
+    bottom: 15%;
+    z-index: 0;
 }
 
-/* Botón flotante */
-.boton_fijo {
+#rectangle {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    background-color: #1d1327;
+    z-index: -1; /* para que quede detrás de todo */
+}
+
+/* --- BOTONES FIJOS --- */
+.botónes_fijos {
     position: fixed;
-    bottom: 5%;
-    right: 5%;
-    width: 50px;
-    height: 50px;
-    font-size: 28px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    background-color: rgb(0, 255, 110);
-    color: #1a0236;
-    transition: 0.2s;
-}
-
-.boton_fijo:hover {
-    background-color: rgb(145, 18, 249);
-    color: #fff;
-}
-
-/* Submenú */
-.submenu {
-    position: fixed;
-    top: 50%;
+    bottom: 8%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 400px;
-    background: linear-gradient(to bottom, #1a2932, #170c22);
-    border: 2px solid #fff;
-    border-radius: 10px;
-    display: none;
-    padding: 20px;
-    box-sizing: border-box;
-    color: #fff;
-}
-
-/* Cerrar submenú */
-.cerrar {
-    float: right;
-    width: 30px;
-    height: 30px;
-    background-color: rgb(255,0,144);
-    border: none;
-    border-radius: 5px;
-    color: #1a0236;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 28px;
+    font-size: 24px;
     font-weight: bold;
-    cursor: pointer;
+    background-color: #271c38;
+    color: rgb(0, 255, 110);
+    transition: 0.2s;
+    border: 3px solid rgb(0, 255, 110);
+    border-radius: 6px;
 }
 
-/* Titulos y textos */
-.submenu h1, .submenu h2 {
-    margin: 10px 0 5px 0;
-}
-
-/* Inputs */
-.input_submenu {
-    width: 100%;
-    height: 35px;
-    margin-bottom: 15px;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    padding: 0 10px;
+#botón_fijo_1_txt {
+    position: fixed;
+    bottom: 1%;
+    left: 46%;
+    color: rgb(0, 255, 110);
     font-size: 16px;
-    color: #1a0236;
 }
 
-.input_submenu:focus {
+.botónes_fijos:hover {
+    background-color: rgb(0, 255, 110);
+    color: #271c38;
+}
+
+#botón_fijo_1.expandido {
+    transform: translateX(-50%) scale(1.5);
+}
+
+/* --- SUBMENÚ --- */
+#submenu_1 {
+    position: fixed;
+    display: none;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #271c38;
     border: 2px solid rgb(0, 255, 110);
+    border-radius: 6px;
+    width: 90%;
+    max-width: 600px;
+    height: 350px;
+    padding: 16px;
+    color: #ffffff;
+    z-index: 10;
+}
+
+/* --- INPUT --- */
+#input_submenu_1 {
+    position: relative;
+    background-color: #1d1327;
+    border: 2px solid #38315c;
+    left: 12%;
+    top: -40%;
     outline: none;
+    width: 80%;
+    max-width: 320px;
+    height: 28px;
+    margin-top: 120px;
+    margin-left: 10%;
+    color: #ffffff;
+    border-radius: 2px;
+    font-family: 'Fredoka One', sans-serif;
+    transition: 0.2s ease-out;
 }
 
-/* Botón listo */
-#boton_submenu_listo {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(0,255,110);
-    color: #1a0236;
-    font-size: 18px;
+#input_submenu_1:focus {
+    border: 3px solid rgb(0, 255, 110);
+    transform: scaleX(1.07);
+}
+
+/* --- TÍTULOS --- */
+#submenu_titulo_1 {
+    font-size: 34px;
     font-weight: bold;
-    cursor: pointer;
+    letter-spacing: 2px;
+    color: rgb(0, 255, 110);
+    text-align: center;
+    margin-top: 0;
 }
 
-#boton_submenu_listo:hover {
-    background-color: rgb(145, 18, 249);
-    color: #fff;
+#submenu_titulo_2 {
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    top: -30%;
+    color: rgb(0, 255, 110);
 }
 
-/* Dropdown */
+/* --- DROPDOWN --- */
 .dropdown {
     position: relative;
-    width: 100%;
-    margin-bottom: 15px;
+    display: inline-block;
+    margin-left: 10%;
 }
 
+   
 .dropbtn {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #1a0236;
+    width: 140px;
+    height: 32px; 
+    background-color: #1d1327;
+    color: #ffffff;
+    font-size: 14px;
+    border: 2px solid #38315c;
+    border-radius: 4px;
     cursor: pointer;
+    font-family: 'Fredoka One', sans-serif;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #fff;
-    width: 100%;
+    top: 36px;
+    left: 0;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
     border-radius: 5px;
-    z-index: 10;
+    z-index: 5;
+    width: 140px;
 }
 
 .dropdown-content a {
-    display: block;
+    color: #1a0236;
     padding: 10px;
     text-decoration: none;
-    color: #1a0236;
+    display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: rgb(0,255,110);
+    background-color: rgb(0, 255, 110);
 }
 
-/* Canvas partículas */
-#particlesCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/* --- BOTONES SECUNDARIOS --- */
+#botón_submenu_listo {
+    display: block;
+    margin: 40px auto 0 auto;
+    font-family: 'Fredoka One';
+    background-color: rgb(0, 255, 110);
+    width: 96px;
+    height: 40px;
+    color: #1a0236;
+    border: 3px solid #ffffff;
+    border-radius: 4px;
+}
+
+#submenu_botón_salir {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    color: #1a0236;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgb(255, 0, 144);
 }

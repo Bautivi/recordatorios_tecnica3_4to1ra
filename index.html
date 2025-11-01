@@ -1,51 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-<title>Test Responsive</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Escolar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="body">
+    <div id="line"></div>
+    <div id="rectangle"></div>
 
-<div id="line"></div>
+    <button id="botón_fijo_1" class="botónes_fijos">+</button>
+    <p id="botón_fijo_1_txt">Añadir tarea</p>
 
-<canvas id="particlesCanvas"></canvas>
-<img id="sad_face" src="sad_face.png" style="display:none;">
+    <div id="submenu_1">
+        <h1 id="submenu_titulo_1">Añadir tarea</h1>
 
-<!-- Botón flotante -->
-<button id="boton_fijo_1" class="boton_fijo">+</button>
+        <input id="input_submenu_1" class="input_submenu" type="text" placeholder="Escribí tu tarea...">
 
-<!-- Submenú -->
-<div id="submenu_1" class="submenu">
-    <button id="submenu_boton_salir" class="cerrar">X</button>
-    
-    <h1 id="submenu_titulo_1">Coloque el título</h1>
-    <input id="input_submenu_1" class="input_submenu" placeholder="Título aquí">
-
-    <h2 id="submenu_titulo_2">Materia</h2>
-    <div class="dropdown">
-        <button id="dropbtn_1" class="dropbtn">Seleccionar</button>
-        <div id="dropdown_content_1" class="dropdown-content">
-            <a href="#">Física</a>
-            <a href="#">Geografía</a>
-            <a href="#">Historia</a>
-            <a href="#">Inglés</a>
-            <a href="#">Literatura</a>
-            <a href="#">Matemáticas</a>
-            <a href="#">Química</a>
-            <a href="#">Sado</a>
-            <a href="#">Tecnología</a>
+        <h2 id="submenu_titulo_2">Materia:</h2>
+        <div class="dropdown">
+            <button class="dropbtn">Seleccionar</button>
+            <div class="dropdown-content">
+                <a href="#">Matemática</a>
+                <a href="#">Lengua</a>
+                <a href="#">Historia</a>
+            </div>
         </div>
+
+        <button id="botón_submenu_listo">Listo</button>
+        <button id="submenu_botón_salir">X</button>
     </div>
 
-    <h2 id="submenu_titulo_3">Fecha designada</h2>
-    <input type="date" class="input_submenu" id="input_fecha">
-
-    <button id="boton_submenu_listo">Listo</button>
-</div>
-
-<script src="processes.js"></script>
+    <script src="processes.js"></script>
 </body>
 </html>
