@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="body">
+     <!-- Lienzo de partículas -->
+  <canvas id="particlesCanvas"></canvas>
+  <img id="sad_face" src="sad_face.png" alt="Sad face" style="display:none;">
+
     <div id="line"></div>
     <div id="rectangle"></div>
 
@@ -20,14 +24,35 @@
         <input id="input_submenu_1" class="input_submenu" type="text" placeholder="Escribí tu tarea...">
 
         <h2 id="submenu_titulo_2">Materia:</h2>
-        <div class="dropdown">
-            <button class="dropbtn">Seleccionar</button>
-            <div class="dropdown-content">
-                <a href="#">Matemática</a>
-                <a href="#">Lengua</a>
-                <a href="#">Historia</a>
-            </div>
-        </div>
+       <div id="dropdown_1" class="dropdown">
+    <button id="dropbtn_1" class="dropbtn">Seleccionar</button>
+    <div id="dropdown_content_1" class="dropdown-content">
+        <a href="#">Física</a>
+        <a href="#">Geografía</a>
+        <a href="#">Historia</a>
+        <a href="#">Lengua</a>
+        <a href="#">Literatura</a>
+        <a href="#">Matemática</a>
+        <a href="#">Química</a>
+        <a href="#">SADO</a>
+        <a href="#">Tecnología</a>
+                        
+                                
+                                        
+                                        
+                                        
+    </div>
+</div>
+
+<div class="fecha-container">
+    <label id="submenu_titulo_3">Fecha de entrega</label><br>
+    <!-- Día (solo 1–31) -->
+    <input type="number" id="fecha_dia" placeholder="Día" min="1" max="31">
+    <input type="number" id="fecha_mes" placeholder="Mes" min="1" max="12">
+</div>
+
+
+<div id="resultados"></div>
 
         <button id="botón_submenu_listo">Listo</button>
         <button id="submenu_botón_salir">X</button>
