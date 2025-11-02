@@ -79,19 +79,32 @@ submenu_boton_listo.addEventListener("click", () => {
     stopParticles();
   }
 
-  const nueva_tarea = { titulo, materia, fecha };
+  const nueva_tarea = {titulo, materia, fecha};
   lista_de_tareas.push(nueva_tarea);
-  resultados.innerHTML = `
+
+  let new_task = document.createElement("div");
+  new_task.className = "tareas";
+
+  new_task.innerHTML = `
     <p><b>Título:</b> ${nueva_tarea.titulo || "(sin título)"}<br>
     <b>Materia:</b> ${nueva_tarea.materia || "(vacío)"}<br>
     <b>Fecha:</b> ${nueva_tarea.fecha || "(vacío)"}</p>
   `;
+  const contenedor = document.getElementById("contenedor_de_tareas");
+  contenedor.appendChild(new_task);
   borrar_tarea();
+  stopParticles();
+  console.log(lista_de_tareas);
 });
 
 function borrar_tarea() {
-  tarea = "";
+   // limpiar inputs
   input_submenu_1.value = "";
+  input_day.value = "";
+  input_month.value = "";
+  dropbtn_1.textContent = "Seleccionar"; // reset dropdown visual
+  materia = "";
+  submenu.style.display = "none";
 }
 
 function titulo_no_colocado() {

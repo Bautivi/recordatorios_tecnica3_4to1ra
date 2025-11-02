@@ -131,6 +131,16 @@ html, body {
     color: rgb(0, 255, 110);
 }
 
+#submenu_titulo_3 {
+    position: relative;
+    left: 60%;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    top: -61%;
+    color: rgb(0, 255, 110);
+}
+
 /* --- DROPDOWN --- */
 .dropdown {
     position: relative;
@@ -210,43 +220,67 @@ html, body {
     font-size: 16px;
     background-color: rgb(255, 0, 144);
 }
-
-.fecha-container {
-    position: relative;
-    left: 40%;
-    top: -40%;
-    width: 80%;
-    max-width: 320px;
-    display: flex;
-    gap: 8px;
-}
-
-#submenu_titulo_3 {
-    position: relative;
-    left: 65%;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-top: -20%;
-    color: rgb(0, 255, 110);
-}
-
-#fecha_dia, #fecha_mes {
-    position: relative;
+#fecha_dia {
+    position: absolute;
+    left: 62%; /* mismo que #input_submenu_1 */
+    top: 57%; /* ajustalo igual que tus otros inputs */
+    width: 35%; /* que quepan los dos en línea */
+    max-width: 64px;
+    height: 28px;
+    margin-left: 10px; /* separa los inputs entre sí */
     background-color: #1d1327;
     border: 2px solid #38315c;
-    outline: none;
-    height: 28px;
-    color: #ffffff;
     border-radius: 2px;
+    color: #ffffff;
     font-family: 'Fredoka One', sans-serif;
-    transition: 0.2s ease-out;
+    outline: none;
     padding-left: 8px;
     box-sizing: border-box;
-    flex: 1;
+    transition: 0.2s ease-out;
+}
+
+#fecha_mes {
+    position: absolute;
+    left: 76%; /* mismo que #input_submenu_1 */
+    top: 57%; /* ajustalo igual que tus otros inputs */
+    width: 35%; /* que quepan los dos en línea */
+    max-width: 64px;
+    height: 28px;
+    margin-left: 10px; /* separa los inputs entre sí */
+    background-color: #1d1327;
+    border: 2px solid #38315c;
+    border-radius: 2px;
+    color: #ffffff;
+    font-family: 'Fredoka One', sans-serif;
+    outline: none;
+    padding-left: 8px;
+    box-sizing: border-box;
+    transition: 0.2s ease-out;
 }
 
 #fecha_dia:focus, #fecha_mes:focus {
     border: 3px solid rgb(0, 255, 110);
     transform: scaleX(1.07);
+}
+
+#contenedor_de_tareas {
+    position: absolute; /* lo ponemos sobre el canvas */
+    top: 10%; /* desde arriba, por debajo del submenu */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    z-index: 20; /* encima del canvas y submenu */
+    background-color: rgba(0,0,0,0.2); /* opcional, para ver el contenedor */
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.tareas {
+    border: 2px solid rgb(0, 255, 110);
+    background-color: #271c38;
+    color: white;
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 4px;
 }

@@ -14,6 +14,7 @@
 
     <div id="line"></div>
     <div id="rectangle"></div>
+    <div id="contenedor_de_tareas"></div>
 
     <button id="botón_fijo_1" class="botónes_fijos">+</button>
     <p id="botón_fijo_1_txt">Añadir tarea</p>
@@ -21,7 +22,7 @@
     <div id="submenu_1">
         <h1 id="submenu_titulo_1">Añadir tarea</h1>
 
-        <input id="input_submenu_1" class="input_submenu" type="text" placeholder="Escribí tu tarea...">
+        <input id="input_submenu_1" class="input_submenu" type="text" placeholder="ej: Ejercicio 1, Trigonometría">
 
         <h2 id="submenu_titulo_2">Materia:</h2>
        <div id="dropdown_1" class="dropdown">
@@ -35,28 +36,23 @@
         <a href="#">Matemática</a>
         <a href="#">Química</a>
         <a href="#">SADO</a>
-        <a href="#">Tecnología</a>
-                        
-                                
-                                        
-                                        
-                                        
+        <a href="#">Tecnología</a>                                               
     </div>
 </div>
 
+<h3 id="submenu_titulo_3">Fecha de entrega</h3>
 <div class="fecha-container">
-    <label id="submenu_titulo_3">Fecha de entrega</label><br>
+    
     <!-- Día (solo 1–31) -->
     <input type="number" id="fecha_dia" placeholder="Día" min="1" max="31">
     <input type="number" id="fecha_mes" placeholder="Mes" min="1" max="12">
 </div>
 
-
-<div id="resultados"></div>
-
         <button id="botón_submenu_listo">Listo</button>
         <button id="submenu_botón_salir">X</button>
     </div>
+
+    
 
     <script src="processes.js"></script>
 </body>
