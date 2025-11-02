@@ -212,3 +212,19 @@ function stopParticles() {
     }
   }
 }
+
+document.body.addEventListener("click", (e) => {
+    const circle = document.createElement("div");
+    circle.classList.add("ripple");
+
+    // Posición del click en la pantalla
+    circle.style.left = `${e.clientX}px`;
+    circle.style.top = `${e.clientY}px`;
+
+    document.body.appendChild(circle);
+
+    // Quitar el círculo después de la animación
+    setTimeout(() => {
+        circle.remove();
+    }, 600);
+});
