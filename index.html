@@ -4,54 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Escolar</title>
+    <!--main font-->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!--charge style.css file-->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="body">
-     <!-- Lienzo de partículas -->
-  <canvas id="particlesCanvas"></canvas>
-  <img id="sad_face" src="sad_face.png" alt="Sad face" style="display:none;">
-    <div id="welcome">¡Bienvenido, estudiante!</div>
-    <div id="line"></div>
-    <div id="rectangle"></div>
-    <div id="contenedor_de_tareas"></div>
+    <body class="body">
+        <div id="filter"></div>
+        <!--particles-->
+    <canvas id="particlesCanvas"></canvas>
+    <img id="sad_face" src="sad_face.png" alt="Sad face" style="display:none;">
+        <!--task-box logo-->
+    <img id="materia_historia" src="materia_historia.png" style="display:none;">
+        <!--click-circle effect-->
+        <div id="circle"></div>
+        <!--top message-->
+        <div id="welcome">¡Hola, estudiante!</div>
+        <div id="line"></div>
+        <div id="rectangle"></div>
+        <div id="contenedor_de_tareas"></div>
+        <div id="contenedor_de_logo"></div>
+        <div id="green_rectangle_top"></div>
+        <!--add-task button-->
+        <div id="boton_fijo_up_bar" class="botones_fijos"></div>
+        <button id="boton_fijo_1" class="botones_fijos"></button>
+        <div id="boton_fijo_1_bg" class="botones_fijos"></div>
+        <button id="boton_fijo_2" class="botones_fijos">!</button>
+        <p id="boton_fijo_1_txt" class="botones_fijos">Añadir tarea</p>
+        <p id="boton_fijo_2_txt" class="botones_fijos">Exámenes</p>
 
-    <button id="botón_fijo_1" class="botónes_fijos">+</button>
-    <p id="botón_fijo_1_txt">Añadir tarea</p>
-
-    <div id="submenu_1">
-        <h1 id="submenu_titulo_1">Añadir tarea</h1>
-
-        <input id="input_submenu_1" class="input_submenu" type="text" placeholder="ej: Ejercicio 1, Trigonometría">
-
-        <h2 id="submenu_titulo_2">Materia:</h2>
-       <div id="dropdown_1" class="dropdown">
-    <button id="dropbtn_1" class="dropbtn">Seleccionar</button>
-    <div id="dropdown_content_1" class="dropdown-content">
-        <a href="#">Física</a>
-        <a href="#">Geografía</a>
-        <a href="#">Historia</a>
-        <a href="#">Lengua</a>
-        <a href="#">Literatura</a>
-        <a href="#">Matemática</a>
-        <a href="#">Química</a>
-        <a href="#">SADO</a>
-        <a href="#">Tecnología</a>                                               
+        <!--submenu region-->
+        <div id="submenu_1">
+            <h1 id="submenu_titulo_1">Añadir tarea</h1>
+            <input id="input_submenu_1" class="input_submenu" type="text" placeholder="ej: Ejercicio 1, Trigonometría">
+            <h2 id="submenu_titulo_2">Materia:</h2>
+        <div id="dropdown_1" class="dropdown">
+        <button id="dropbtn_1" class="dropbtn">Seleccionar</button>
+        <div id="dropdown_content_1" class="dropdown-content">
+            <a href="#">Física</a>
+            <a href="#">Geografía</a>
+            <a href="#">Historia</a>
+            <a href="#">Literatura</a>
+            <a href="#">Matemática</a>
+            <a href="#">Química</a>
+            <a href="#">SADO</a>
+            <a href="#">Tecnología</a>   
+            <a href="#">Inglés</a>                                               
+        </div>
     </div>
-</div>
-
-<h3 id="submenu_titulo_3">Fecha de entrega</h3>
-<div class="fecha-container">
-    
-    <!-- Día (solo 1–31) -->
-    <input type="number" id="fecha_dia" placeholder="Día" min="1" max="31">
-    <input type="number" id="fecha_mes" placeholder="Mes" min="1" max="12">
-</div>
-
-        <button id="botón_submenu_listo">Listo</button>
-        <button id="submenu_botón_salir">X</button>
+    <h3 id="submenu_titulo_3">Fecha de entrega</h3>
+    <div class="fecha-container">
+        <!-- Día (solo 1–31) -->
+        <input type="number" id="fecha_dia" placeholder="Día" min="1" max="31">
+        <input type="number" id="fecha_mes" placeholder="Mes" min="1" max="12">
     </div>
-
-    <script src="processes.js"></script>
-</body>
+            <button id="botón_submenu_listo">Listo</button>
+            <button id="submenu_botón_salir">X</button>
+    </div>
+    </div>
+        <!--charge processes.js file-->
+        <script src="js/elements.js"></script>
+        <script src="js/events.js"></script>
+        <script src="js/submenu.js"></script>
+        <script src="js/visual effects/particles.js"></script>
+        <script src="js/visual effects/ripple.js"></script>
+        <script src="js/hotbar.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 </html>

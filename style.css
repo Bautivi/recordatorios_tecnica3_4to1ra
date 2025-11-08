@@ -3,6 +3,22 @@
     box-sizing: border-box;
 }
 
+:root {
+    --gre_c_main: rgb(0, 232, 166);
+    --bla_c_main: rgb(14, 14, 25);
+    --bla_c_sub1: #1a1730;
+    --bla_c_sub2: #151327;
+    --bla_c_sub3: #31425c; 
+    --whi_c_sub1: #a2c0dc; 
+
+    --c_rec_materia_fisica: rgb(0, 232, 220);
+    --c_rec_materia_quimica: rgb(37, 237, 93);
+    --c_rec_materia_matematicas: rgb(237, 37, 94);
+    --c_rec_materia_literatura: rgb(170, 37, 237);
+    
+    --c_violet_test_1: #1d1327;
+    --c_violet_test_2: #38315c;
+}
 /* --- CONFIGURACIÓN GENERAL --- */
 html, body {
     height: 100%;
@@ -11,62 +27,180 @@ html, body {
 }
 
 .body {
-    background: #1d1327;
+    background: rgb(14, 14, 25);
     font-family: 'Fredoka One', sans-serif;
     overflow-x: hidden;
+}
+
+#filtro {
+  position: fixed;
+  inset: 0;
+  background: rgba(85, 0, 255, 1); /* azul suave */
+  pointer-events: none; /* no bloquea clics */
+  z-index: 9999;
+  display: none;
+}
+
+#green_rectangle_top {
+    position: absolute;
+    background-color: var(--gre_c_main);
+    width: 100%;
+    height: 7%;
+    top: 0%;
+    z-index: -1;
 }
 
 /* --- LÍNEA DECORATIVA --- */
 #line {
     position: absolute;
     width: 100%;
-    height: 3px;
-    background-color: rgb(0, 255, 110);
-    bottom: 15%;
-    z-index: 0;
+    height: 2px;
+    background-color: #ffffff;
+    bottom: 13%;
+    z-index: 1;
 }
 
 #rectangle {
     position: absolute;
-    bottom: 0%;
+    bottom: -5%;
     width: 100%;
     height: 100px;
-    background-color: #1d1327;
-    z-index: -1; /* para que quede detrás de todo */
+    background-color: #131527;
+    z-index: -2; /* para que quede detrás de todo */
+}
+
+#welcome {
+    font-family: 'Fredoka One', sans-serif;
+    position: absolute;
+    color: #1a0236;
+    font-size: 16px;
+    left: 44%;
+    top: 2%;
+    z-index: 0;
+}
+
+#boton_fijo_up_bar {
+    position: absolute;
+    left: 47.7%;
+    bottom: 12.8%;
+    width: 60px;
+    height: 6px;
+    background-color:rgb(0, 232, 166);
+    z-index: 2;
+    border-radius: 2px;
+    transition: 0.3s ease-in-out;
 }
 
 /* --- BOTONES FIJOS --- */
-.botónes_fijos {
+#boton_fijo_1 {
     position: fixed;
-    bottom: 8%;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
+    width: 34px;
+    height: 28px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;              /* 🔹 activa flexbox */
+    align-items: center;        /* 🔹 centra verticalmente */
+    justify-content: center;    /* 🔹 centra horizontalmente */
+    padding-top: 3px; /* baja el “+” un poquito */
+    background-color: #131527;
+    color: rgb(255, 255, 255);
+    transition: 0.1s;
+    border: 3px solid #ffffff;
+    border-radius: 8px;
+    transition: 0.1s;
+}
+
+#boton_fijo_1_bg {
+    position: fixed;
     width: 40px;
+    height: 60px;
+    bottom: -3%;
+    left: 44.5%;
+    transform: perspective(10px) rotateX(7deg);
+    margin: 50px;
+    background: linear-gradient(#2d7b80, #131527);
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+}
+
+
+#boton_fijo_2 {
+    position: fixed;
+    bottom: 5%;
+    left: 75%;
+    transform: translateX(-50%);
+    width: 34px;
     height: 28px;
     font-size: 24px;
     font-weight: bold;
-    background-color: #271c38;
-    color: rgb(0, 255, 110);
-    transition: 0.2s;
-    border: 3px solid rgb(0, 255, 110);
-    border-radius: 6px;
+    display: flex;              /* 🔹 activa flexbox */
+    align-items: center;        /* 🔹 centra verticalmente */
+    justify-content: center;    /* 🔹 centra horizontalmente */
+      padding-top: 3px; /* baja el “+” un poquito */
+    background-color: #131527;
+    color: rgb(255, 255, 255);
+    transition: 0.1s;
+    border: 3px solid #ffffff;
+    border-radius: 8px;
 }
 
-#botón_fijo_1_txt {
+#boton_fijo_1_txt {
     position: fixed;
-    bottom: 1%;
-    left: 46%;
-    color: rgb(0, 255, 110);
+    bottom: -2%;
+    left: 48%;
+    color: #ffffff;
     font-size: 16px;
 }
 
-.botónes_fijos:hover {
-    background-color: rgb(0, 255, 110);
-    color: #271c38;
+#boton_fijo_2_txt {
+    position: fixed;
+    bottom: -2%;
+    left: 72%;
+    color: #ffffff;
+    font-size: 16px;
 }
 
-#botón_fijo_1.expandido {
-    transform: translateX(-50%) scale(1.5);
+.botones_fijos.expandido {
+    transform: translateX(-50%) scale(0.75) !important;
+    background-color: var(--bla_c_main) !important;
+    border: 3px solid var(--gre_c_main) !important;
+    color: var(--gre_c_main) !important;
+}
+
+.botones_fijos.in {
+    border: 3px solid rgb(124, 241, 202) !important;
+    color: rgb(124, 241, 202) !important;
+    box-shadow: 0 0 8px #00ffa2, 0 0 12px #00ffa2 inset !important;
+    text-shadow: 0 0 8px #00ffa2, 0 0 12px #00ffa2, 0 0 60px #00ffa2 !important;
+}
+
+.botones_fijos.btn_test {
+    left: 72.7% !important;
+    transition: 0.3s ease-in-out !important;
+}
+
+.botones_fijos.btn_test_bg {
+    left: 69.4% !important;
+    transition: 0.3s ease-in-out !important;
+}
+
+.botones_fijos.txt {
+    background: linear-gradient(#00ffa2, #ffffff) !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: 0 0 6px #00ffa2, 0 0 10px #00ffa2, 0 0 60px #00ffa2 !important;
+}
+
+#boton_fijo_1.changed {
+    font-size: 30px;
+    transition: 0.1s;
+}
+
+#boton_fijo_1_txt.changed {
+    left: 46%;
 }
 
 /* --- SUBMENÚ --- */
@@ -76,8 +210,8 @@ html, body {
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    background: #271c38;
-    border: 2px solid rgb(0, 255, 110);
+    background: var(--bla_c_sub1);
+    border: 2px solid var(--gre_c_main);
     border-radius: 6px;
     width: 90%;
     max-width: 600px;
@@ -90,8 +224,8 @@ html, body {
 /* --- INPUT --- */
 #input_submenu_1 {
     position: relative;
-    background-color: #1d1327;
-    border: 2px solid #38315c;
+    background-color: var(--bla_c_sub2);
+    border: 2px solid var(--bla_c_sub3);
     left: 12%;
     top: -40%;
     outline: none;
@@ -107,7 +241,7 @@ html, body {
 }
 
 #input_submenu_1:focus {
-    border: 3px solid rgb(0, 255, 110);
+    border: 3px solid var(--gre_c_main);
     transform: scaleX(1.07);
 }
 
@@ -116,7 +250,7 @@ html, body {
     font-size: 34px;
     font-weight: bold;
     letter-spacing: 2px;
-    color: rgb(0, 255, 110);
+    color: var(--gre_c_main);
     text-align: center;
     margin-top: 0;
 }
@@ -128,7 +262,7 @@ html, body {
     font-weight: 600;
     letter-spacing: 1px;
     top: -30%;
-    color: rgb(0, 255, 110);
+    color: var(--gre_c_main);
 }
 
 #submenu_titulo_3 {
@@ -138,7 +272,7 @@ html, body {
     font-weight: 600;
     letter-spacing: 1px;
     top: -61%;
-    color: rgb(0, 255, 110);
+    color: var(--gre_c_main);
 }
 
 /* --- DROPDOWN --- */
@@ -153,10 +287,10 @@ html, body {
 .dropbtn {
     width: 140px;
     height: 28px; /* ahora mide 28px exactos */
-    background-color: #1d1327;
+    background-color: var(--bla_c_sub2);
     color: #ffffff;
     font-size: 14px;
-    border: 2px solid #38315c;
+    border: 2px solid var(--bla_c_sub3);
     border-radius: 4px;
     cursor: pointer;
     font-family: 'Fredoka One', sans-serif;
@@ -170,8 +304,8 @@ html, body {
     position: absolute;
     top: 32px; /* ajustado al nuevo alto */
     left: 0;
-    background-color: #1d1327;
-    border: 2px solid #38315c;
+    background-color: var(--bla_c_sub2);
+    border: 2px solid var(--bla_c_sub3);
     border-radius: 4px;
     z-index: 5;
     width: 140px;
@@ -189,7 +323,7 @@ html, body {
 }
 
 .dropdown-content a:hover {
-    background-color: rgb(0, 255, 110);
+    background-color: var(--gre_c_main);
     color: #1a0236;
 }
 
@@ -198,7 +332,7 @@ html, body {
     display: block;
     margin: 40px auto 0 auto;
     font-family: 'Fredoka One';
-    background-color: rgb(0, 255, 110);
+    background-color: var(--gre_c_main);
     width: 96px;
     height: 28px;
     color: #1a0236;
@@ -228,8 +362,8 @@ html, body {
     max-width: 64px;
     height: 28px;
     margin-left: 10px; /* separa los inputs entre sí */
-    background-color: #1d1327;
-    border: 2px solid #38315c;
+    background-color: var(--bla_c_sub2);
+    border: 2px solid var(--bla_c_sub3);
     border-radius: 2px;
     color: #ffffff;
     font-family: 'Fredoka One', sans-serif;
@@ -247,8 +381,8 @@ html, body {
     max-width: 64px;
     height: 28px;
     margin-left: 10px; /* separa los inputs entre sí */
-    background-color: #1d1327;
-    border: 2px solid #38315c;
+    background-color: var(--bla_c_sub2);
+    border: 2px solid var(--bla_c_sub3);
     border-radius: 2px;
     color: #ffffff;
     font-family: 'Fredoka One', sans-serif;
@@ -259,45 +393,26 @@ html, body {
 }
 
 #fecha_dia:focus, #fecha_mes:focus {
-    border: 3px solid rgb(0, 255, 110);
+    border: 3px solid var(--gre_c_main);
     transform: scaleX(1.07);
 }
 
 #contenedor_de_tareas {
-    position: relative; /* antes era absolute */
-    margin: 10% auto 0 auto; /* margen superior y centrado */
-    width: 99%;
+    position: relative;
+    margin: 10% auto 0 auto;
+    width: 90%;
     top: -110%;
     font-size: 16px;
-    max-height: 110px; /* límite de altura */
-    overflow-y: auto; /* scroll si hay mucho contenido */
-    background-color: #1d1327;
+    background-color: var(--bla_c_sub2);
     padding: 10px;
     border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* dos columnas iguales */
+    gap: 8px; /* separación entre cajas */
+    max-height: 300px; /* opcional, ajustalo como quieras */
 }
 
-/*actual task-boxes */
-.tareas {
-    border: 2px solid #382f5a;
-    background-color: #271c38;
-    color: white;
-    padding: 8px;
-    border-radius: 4px;
-    word-break: break-word; /* evita que textos largos rompan el diseño */
-    min-height: 40px;
-}
 
-#welcome {
-    font-family: 'Fredoka One', sans-serif;
-    position: absolute;
-    color: rgb(0, 255, 110);
-    font-size: 12px;
-    left: 44%;
-    top: 0%;
-}
 
 .ripple {
     position: absolute;
@@ -316,4 +431,99 @@ html, body {
         transform: translate(-50%, -50%) scale(10); /* cuánto se expande */
         opacity: 0; /* desaparece */
     }
+}
+
+#history {
+    height: 10%;
+    width: 5%;
+}
+
+/*actual task-boxes */
+.tareas {
+    position: relative;
+    border: 2px solid var(--bla_c_sub3);
+    background-color: var(--bla_c_sub2);
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    word-break: break-word;
+    min-height: 90px;
+    max-height: 90px;
+}
+
+/* título de la tarea */
+.tareas .tarea {
+    position: absolute;
+    top: 40%;
+    left: 8%;
+    font-size: 16x;
+    color: var(--whi_c_sub1);
+}
+
+
+
+/* nombre de la materia */
+.tareas .materia {
+    position: absolute;
+    top: 2%;
+    left: 8%;
+    letter-spacing: 3px;
+    font-size: 26px;
+    color: rgb(255, 255, 255);
+    font-weight: 1000px;
+}
+
+/* fecha */
+.tareas .fecha {
+    position: absolute;
+    top: -174%;
+    left: -15%;
+    font-size: 20px;
+    color: #b3b3b3;
+    text-align: right;
+}
+
+.tareas .task_rectangle {
+    position: absolute;
+    left: -1%; /* o right: 0 si querés que esté al otro lado */
+    top: -0%;
+    width: 12px; /* grosor del rectángulo */
+    height: 102%;
+    background-color: #3498db; /* color base (azulado, por ejemplo) */
+    border-radius: 10px 0 0 10px;
+}
+
+
+.tareas .tick {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 14%;
+    left: 93%;
+    background-color: var(--bla_c_sub2);
+    color: var(--gre_c_main);
+    border: solid var(--bla_c_sub3);
+    border-radius: 10px;
+    transition: 0.08s;
+    transform-origin: center center;
+}
+
+.tareas .tick.true {
+    background-color: var(--gre_c_main);
+    border: solid var(--gre_c_main);
+    transform: scale(1); /* se hace más chico */
+}
+
+.tareas .tick.hold {
+    background-color: #44497d;
+    transform: scale(0.8); /* se hace más chico */
+}
+
+.logo_tarea {
+    position: absolute;
+    width: 65px;  /* tamaño del logo */
+    height: 65px;
+    left: 0.8%;
+    top: 14%;
+    object-fit: contain; /* para que no se distorsione */
 }
